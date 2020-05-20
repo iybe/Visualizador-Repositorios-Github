@@ -19,7 +19,7 @@ export default function Repositorios() {
   },[]);
   
   return (
-    <div className="container">
+    <div className="container-repositorios">
       <ul>
         {repositorios.map(rep => (<li>{rep}</li>))}
       </ul>

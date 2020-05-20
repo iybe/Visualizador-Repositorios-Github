@@ -1,4 +1,4 @@
-.container {
+.container-repositorios {
   font-family: Arial, Helvetica, sans-serif;
   color: white;
   background-color: #262626;
@@ -8,11 +8,11 @@
   justify-content: center;
 }
 
-.container ul {
+.container-repositorios ul {
   list-style: none;
 }
 
-.container li {
+.container-repositorios li {
   padding: 8px;
   font-size: 30px;
   margin-bottom: 15px;
