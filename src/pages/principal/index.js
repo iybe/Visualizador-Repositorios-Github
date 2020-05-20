@@ -12,9 +12,12 @@ export default function Principal() {
   function pesquisar() {
     axios.get(`https://api.github.com/users/${usuario}/repos`).then( res => {
       const repositorios = res.data;
-      let nomeRepositorios = [];
-      repositorios.map(rep => nomeRepositorios.push(rep.name));
-      localStorage.setItem("nomeRepositorios",JSON.stringify(nomeRepositorios));
+      let dadosRepositorios = [];
+      repositorios.map(rep => dadosRepositorios.push({
+          nome: rep.name,
+          url: rep.html_url
+        }));
+      localStorage.setItem("dadosRepositorios",JSON.stringify(dadosRepositorios));
       setErro(false);
       history.push('/repositorios');
     }).catch( err => setErro(true) );

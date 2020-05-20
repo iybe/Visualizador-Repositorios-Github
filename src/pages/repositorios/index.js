@@ -8,10 +8,10 @@ export default function Repositorios() {
   const history = useHistory();
 
   useEffect(() => {
-    let nomeRepositorios = localStorage.getItem("nomeRepositorios");
-    if(nomeRepositorios !== null){
-      nomeRepositorios = JSON.parse(nomeRepositorios);
-      setRepositorios(nomeRepositorios);
+    let dadosRepositorios = localStorage.getItem("dadosRepositorios");
+    if(dadosRepositorios !== null){
+      dadosRepositorios = JSON.parse(dadosRepositorios);
+      setRepositorios(dadosRepositorios);
       localStorage.clear();
     }else{
       history.push('/');
@@ -21,7 +21,13 @@ export default function Repositorios() {
   return (
     <div className="container-repositorios">
       <ul>
-        {repositorios.map(rep => (<li>{rep}</li>))}
+        {repositorios.map(rep => 
+          (
+            <li>
+              <a href={rep.url} target="blank">Repositorio: {rep.nome}</a>
+            </li>)
+          )
+        }
       </ul>
       <Link className="link" to="/">Voltar</Link>
     </div>
