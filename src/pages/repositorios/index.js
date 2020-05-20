@@ -1,5 +1,6 @@
 import React,{ useEffect,useState } from 'react';
 import { useHistory, Link } from 'react-router-dom';
+import './style.css';
 
 export default function Repositorios() {
   
@@ -18,11 +19,11 @@ export default function Repositorios() {
   },[]);
   
   return (
-    <div>
+    <div className="container">
       <ul>
         {repositorios.map(rep => (<li>{rep}</li>))}
       </ul>
-      <Link to="/">Voltar</Link>
+      <Link className="link" to="/">Voltar</Link>
     </div>
   );
 }

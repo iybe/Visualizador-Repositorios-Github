@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
+import './style.css';
 
 export default function Principal() {
   
@@ -20,10 +21,10 @@ export default function Principal() {
   }
 
   return (
-    <div>
-      <input onChange={e => setUsuario(e.target.value)} value={usuario} placeholder="usuario"></input>
+    <div className="container">
+      <input onChange={e => setUsuario(e.target.value)} value={usuario} placeholder="Digite um nome de usuario"></input>
       <button onClick={pesquisar} type="button">Pesquisar</button>
-      { erro ? <p>Usuario nao encontrado.</p> : '' }
+      { erro ? <p>Usuario nao encontrado</p> : '' }
     </div>
   );
 }
